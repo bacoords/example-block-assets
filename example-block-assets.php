@@ -19,6 +19,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /**
  * Register custom JavaScript.
+ *
+ * Before we can enqueue our custom JavaScript file, we need to register it globally.
  */
 function register_custom_javascript() {
 	// Register the custom JavaScript file.
@@ -36,7 +38,9 @@ add_action( 'init', __NAMESPACE__ . '\register_custom_javascript' );
 
 
 /**
- * Enqueue custom assets for specific blocks.
+ * Enqueue our JavaScript file for specific blocks.
+ *
+ * This function will modify the block.json file, only enqueuing the custom JavaScript file for the core/button block.
  *
  * @param array $metadata The block metadata.
  * @return array The filtered block metadata.
@@ -58,7 +62,11 @@ add_filter( 'block_type_metadata', __NAMESPACE__ . '\filter_core_button_block_me
 
 
 /**
- * Register custom CSS.
+ * Register and enqueue our custom block CSS.
+ *
+ * This is much easier, thanks to the `wp_enqueue_block_style` function.
+ *
+ * If your site is NOT loading separate block assets, this file will be enqueued on every page.
  */
 function register_custom_css() {
 
