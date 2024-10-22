@@ -48,7 +48,7 @@ add_action( 'init', __NAMESPACE__ . '\register_custom_javascript' );
 function filter_core_button_block_metadata( $metadata ) {
 
 	// If the block is a core/button block add the custom assets.
-	if ( 'core/button' === $metadata['name'] ) {
+	if ( 'core/buttons' === $metadata['name'] ) {
 		$metadata['viewScript'] = array_merge(
 			(array) ( $metadata['viewScript'] ?? array() ),
 			array( 'example-block-assets' )
@@ -79,7 +79,7 @@ function register_custom_css() {
 	);
 
 	wp_enqueue_block_style(
-		'core/button',
+		'core/buttons',
 		array(
 			'handle' => 'example-block-assets',
 		)
