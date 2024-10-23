@@ -6,3 +6,6 @@ Examples include:
 
 - Registering a custom JavaScript file for any block.
 - Registering a custom CSS file for a specific block.
+
+
+[Watch the full tutorial](https://www.youtube.com/watch?v=qVixAMecAbo)
